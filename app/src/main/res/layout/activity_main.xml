@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginRight="100dp"
+            android:background="#009688"
+            tl:tl_tab_padding="0dp"
+            tl:tl_tab_width="95dp"
+            tl:tl_textsize="15sp" />
+
+        <TextView
+            android:id="@+id/iv_add"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/md_red_100"
+            android:gravity="center"
+            android:text="+" />
+
+        <TextView
+            android:id="@+id/iv_del"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="50dp"
+            android:background="@color/md_blue_200"
+            android:gravity="center"
+            android:text="_" />
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/my_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

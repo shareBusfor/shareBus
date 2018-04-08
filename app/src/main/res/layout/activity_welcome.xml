@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_bg_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/temp_background"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_click_into"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/shape_rec_with_border"
+        android:layout_centerHorizontal="true"
+        android:text="立即进入"/>
+
+</RelativeLayout>

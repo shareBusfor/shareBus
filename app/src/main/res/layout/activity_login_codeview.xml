@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_back"/>
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_phone_orange"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/forestgreen"
+        android:text="请输入验证码"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:textColor="@color/gray_black"
+        android:background="@drawable/shape_rec_green_border"
+        android:textSize="12dp"
+        android:text="60s后重发"/>
+
+    <mulin.sharebus.ui.view.VerificationCodeView
+        android:id="@+id/icv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="26dp"
+        app:icv_et_bg_focus="@drawable/shape_icv_et_bg_focus"
+        app:icv_et_bg_normal="@drawable/shape_icv_et_bg_normal"
+        app:icv_et_divider_drawable="@drawable/shape_divider_identifying"
+        app:icv_et_number="6"
+        app:icv_et_text_color="#000000"
+        app:icv_et_width="40dp" />
+
+</LinearLayout>

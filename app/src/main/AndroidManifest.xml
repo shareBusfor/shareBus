@@ -1,0 +1,38 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mulin.sharebus">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".MyApplication"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ui.activity.LoginActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.WelcomeActivity" >
+
+        </activity>
+        <activity android:name=".ui.activity.SplashActivity"
+           >
+        </activity>
+        <activity android:name=".ui.activity.CrossfadeDrawerLayoutActvitiy"
+            android:theme="@style/MaterialDrawerTheme.TranslucentStatus">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+</manifest>
