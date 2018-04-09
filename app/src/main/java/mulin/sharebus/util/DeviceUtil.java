@@ -94,7 +94,7 @@ public class DeviceUtil {
             // for ActivityCompat#requestPermissions for more details.
 //            return T;
             sb.append("DeviceId: " + ""+ "\n");
-            Log.e("heelo","error");
+//            Log.e("heelo","error s");
         }
         else {
             sb.append("DeviceId: ").append(tm.getDeviceId()).append("\n");
