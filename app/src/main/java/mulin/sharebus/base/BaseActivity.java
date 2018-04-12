@@ -58,7 +58,7 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
 
         initImmersion();
         if (showToolBar()) {
-            mToolbar = (Toolbar) findViewById(R.id.toolbar);
+            mToolbar = (Toolbar) findViewById(id.toolbar);
             if (null != mToolbar) {
                 setSupportActionBar(mToolbar);
                 getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -89,8 +89,8 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
             //如果需要显示自定义toolbar,并且资源id存在的情况下，实例化baseView;
             rootView = LayoutInflater.from(this).inflate(toolbarCover() ?
                     R.layout.ac_base_toolbar_cover : R.layout.ac_base, null, false);//根布局
-            ViewStub mVs_toolbar = (ViewStub) rootView.findViewById(R.id.vs_toolbar);//toolbar容器
-            FrameLayout fl_container = (FrameLayout) rootView.findViewById(R.id.fl_container);//子布局容器
+            ViewStub mVs_toolbar = (ViewStub) rootView.findViewById(id.vs_toolbar);//toolbar容器
+            FrameLayout fl_container = (FrameLayout) rootView.findViewById(id.fl_container);//子布局容器
             mVs_toolbar.setLayoutResource(getToolBarResId());//toolbar资源id
             mVs_toolbar.inflate();//填充toolbar
             LayoutInflater.from(this).inflate(layoutResID, fl_container, true);//子布局

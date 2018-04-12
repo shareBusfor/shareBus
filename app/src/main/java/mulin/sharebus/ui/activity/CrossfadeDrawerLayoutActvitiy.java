@@ -48,8 +48,8 @@ public class CrossfadeDrawerLayoutActvitiy extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         //set the back arrow in the toolbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.drawer_item_crossfade_drawer_layout_drawer);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setTitle(R.string.drawer_item_crossfade_drawer_layout_drawer);
 //        getSupportActionBar().set
 
         // Create a few sample profile
@@ -60,7 +60,8 @@ public class CrossfadeDrawerLayoutActvitiy extends AppCompatActivity {
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.header)
+                .withHeaderBackground(R.color.white)
+//                .withProfileImagesVisible(false)
                 .addProfiles(
                         profile, profile2
                 )
@@ -70,18 +71,19 @@ public class CrossfadeDrawerLayoutActvitiy extends AppCompatActivity {
         //Create the drawer
         result = new DrawerBuilder()
                 .withActivity(this)
-                .withToolbar(toolbar)
                 .withHasStableIds(true)
                 .withDrawerLayout(R.layout.crossfade_drawer)
-                .withDrawerWidthDp(72)
+                .withDrawerWidthDp(120)
                 .withGenerateMiniDrawer(true)
                 .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_compact_header).withIcon(GoogleMaterial.Icon.gmd_brightness_5).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_action_bar_drawer).withIcon(FontAwesome.Icon.faw_home).withBadge("22").withBadgeStyle(new BadgeStyle(Color.RED, Color.RED)).withIdentifier(2).withSelectable(false),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_multi_drawer).withIcon(FontAwesome.Icon.faw_gamepad).withIdentifier(3),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_non_translucent_status_drawer).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(4),
-                        new PrimaryDrawerItem().withDescription("A more complex sample").withName(R.string.drawer_item_advanced_drawer).withIcon(GoogleMaterial.Icon.gmd_adb).withIdentifier(5),
+//                        new PrimaryDrawerItem().withName("钱包").withIcon()
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_chi_wallet).withIcon(GoogleMaterial.Icon.gmd_account_balance_wallet).withIdentifier(1).withSelectedIconColor(Color.parseColor("#FF8F00")).withIdentifier(5).withSelectedTextColor(Color.parseColor("#FF8F00")),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_chi_notification).withIcon(GoogleMaterial.Icon.gmd_notifications).withIdentifier(2).withSelectedIconColor(Color.parseColor("#FF8F00")).withIdentifier(5).withSelectedTextColor(Color.parseColor("#FF8F00")),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_chi_verificayion).withIcon(GoogleMaterial.Icon.gmd_verified_user).withIdentifier(3).withSelectedIconColor(Color.parseColor("#FF8F00")).withIdentifier(5).withSelectedTextColor(Color.parseColor("#FF8F00")),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_chi_activities).withIcon(GoogleMaterial.Icon.gmd_local_activity).withIdentifier(4).withSelectedIconColor(Color.parseColor("#FF8F00")).withIdentifier(5).withSelectedTextColor(Color.parseColor("#FF8F00")),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_chi_setting).withIcon(GoogleMaterial.Icon.gmd_settings).withSelectedIconColor(Color.parseColor("#FF8F00")).withIdentifier(5).withSelectedTextColor(Color.parseColor("#FF8F00")),
+//                        new PrimaryDrawerItem().withName(R.stringample").withName(R.string.drawer_item_advanced_drawer).withIcon(GoogleMaterial.Icon.gmd_adb).withIdentifier(5),
                         new SectionDrawerItem().withName(R.string.drawer_item_section_header),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_github),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(GoogleMaterial.Icon.gmd_format_color_fill).withTag("Bullhorn")
@@ -90,9 +92,9 @@ public class CrossfadeDrawerLayoutActvitiy extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem instanceof Nameable) {
+
                             Toast.makeText(CrossfadeDrawerLayoutActvitiy.this, ((Nameable) drawerItem).getName().getText(CrossfadeDrawerLayoutActvitiy.this), Toast.LENGTH_SHORT).show();
                         }
-                        //we do not consume the event and want the Drawer to continue with the event chain
                         return false;
                     }
                 })
@@ -101,8 +103,7 @@ public class CrossfadeDrawerLayoutActvitiy extends AppCompatActivity {
                 .build();
 
 
-        //get the CrossfadeDrawerLayout which will be used as alternative DrawerLayout for the Drawer
-        //the CrossfadeDrawerLayout library can be found here: https://github.com/mikepenz/CrossfadeDrawerLayout
+
         crossfadeDrawerLayout = (CrossfadeDrawerLayout) result.getDrawerLayout();
 
         //define maxDrawerWidth
@@ -141,31 +142,8 @@ public class CrossfadeDrawerLayoutActvitiy extends AppCompatActivity {
          * this animate the height of the profile to the height of the AccountHeader and
          * animates the height of the drawerItems to the normal drawerItems so the difference between Mini and normal Drawer is eliminated
          **/
-        /*
-        final double headerHeight = DrawerUIUtils.getOptimalDrawerWidth(this) * 9d / 16d;
-        final double originalProfileHeight = UIUtils.convertDpToPixel(72, this);
-        final double headerDifference = headerHeight - originalProfileHeight;
-        final double originalItemHeight = UIUtils.convertDpToPixel(64, this);
-        final double normalItemHeight = UIUtils.convertDpToPixel(48, this);
-        final double itemDifference = originalItemHeight - normalItemHeight;
-        crossfadeDrawerLayout.withCrossfadeListener(new CrossfadeDrawerLayout.CrossfadeListener() {
-            @Override
-            public void onCrossfade(View containerView, float currentSlidePercentage, int slideOffset) {
-                for (int i = 0; i < miniResult.getAdapter().getItemCount(); i++) {
-                    IDrawerItem drawerItem = miniResult.getAdapter().getItem(i);
-                    if (drawerItem instanceof MiniProfileDrawerItem) {
-                        MiniProfileDrawerItem mpdi = (MiniProfileDrawerItem) drawerItem;
-                        mpdi.withCustomHeightPx((int) (originalProfileHeight + (headerDifference * currentSlidePercentage / 100)));
-                    } else if (drawerItem instanceof MiniDrawerItem) {
-                        MiniDrawerItem mdi = (MiniDrawerItem) drawerItem;
-                        mdi.withCustomHeightPx((int) (originalItemHeight - (itemDifference * currentSlidePercentage / 100)));
-                    }
-                }
 
-                miniResult.getAdapter().notifyDataSetChanged();
-            }
-        });
-        */
+
     }
 
     @Override

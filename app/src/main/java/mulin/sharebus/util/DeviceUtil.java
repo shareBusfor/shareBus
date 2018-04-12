@@ -1,6 +1,7 @@
 package mulin.sharebus.util;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -18,6 +19,7 @@ public class DeviceUtil {
      * 获取设备信息
      *
      */
+    @SuppressLint("HardwareIds")
     private String getDeviceInfo(Context context) {
 
         StringBuilder sb = new StringBuilder();
@@ -97,6 +99,7 @@ public class DeviceUtil {
 //            Log.e("heelo","error s");
         }
         else {
+            assert tm != null;
             sb.append("DeviceId: ").append(tm.getDeviceId()).append("\n");
         }
         return sb.toString();

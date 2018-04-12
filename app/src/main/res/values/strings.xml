@@ -2,6 +2,13 @@
     <string name="app_name">ShareBus</string>
 
     <!-- Drawer Items -->
+
+    <string name="drawer_item_chi_wallet">钱包</string>
+    <string name="drawer_item_chi_notification">通知</string>
+    <string name="drawer_item_chi_verificayion">我的认证</string>
+    <string name="drawer_item_chi_activities">活动</string>
+    <string name="drawer_item_chi_setting">设置</string>
+
     <string name="drawer_item_persistent_compact_header">PersistentHeader Drawer</string>
     <string name="drawer_item_persistent_compact_header_desc">Smaller persistent account header</string>
     <string name="drawer_item_compact_header">CompactHeader Drawer</string>

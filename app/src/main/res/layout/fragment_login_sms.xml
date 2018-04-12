@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ver="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/ll_login_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:id="@+id/iv_logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/phone"/>
+
+    <TextView
+        android:id="@+id/tv_phone_info"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_height="30dp"
+        android:textSize="16dp"
+        android:textColor="@color/gray"
+        android:text="验证码已发送至189xxxxxxxx"/>
+
+    <Button
+        android:id="@+id/bt_count_down"
+        android:layout_marginTop="5dp"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:textColor="@color/gray"
+        android:textSize="13dp"
+        android:text="60s后重新发送"
+        android:background="@drawable/shape_rec_gray_5_border"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_ususal_login">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="请输入六位验证码"/>
+
+    </LinearLayout>
+
+   <mulin.sharebus.ui.view.VerificationSmsCodeView
+       android:id="@+id/verificationCodeView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="10dp"
+       ver:box="6"
+       ver:box_bg_focus="@drawable/verification_edit_bg_focus"
+       ver:box_bg_normal = "@drawable/verification_edit_bg_normal"
+       ver:child_h_padding="10dp"
+       ver:child_width="40dp"
+       ver:child_height="40dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="20dp"
+
+       >
+
+   </mulin.sharebus.ui.view.VerificationSmsCodeView>
+
+
+
+
+
+
+</LinearLayout>
