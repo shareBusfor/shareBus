@@ -1,9 +1,12 @@
 package mulin.sharebus.ui.activity;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import me.yokeyword.fragmentation.SupportActivity;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
@@ -12,11 +15,16 @@ import mulin.sharebus.R;
 import mulin.sharebus.ui.fragment.MainLoginFragment;
 import mulin.sharebus.util.LogUtils;
 
+
 /**
  * Created by mulin on 2018/4/11.
  */
 
+
+//@RuntimePermissions
 public class FragmentMainActivity extends SupportActivity {
+
+
 
 
     @Override
@@ -37,14 +45,11 @@ public class FragmentMainActivity extends SupportActivity {
         setContentView(R.layout.activity_fragment_hone);
 
 
-//        mStartNaviButton.setVisibility(View.VISIBLE);
 
-//
-//        if(savedInstanceState == null){
-//            loadRootFragment(R.id.fl_container, MainLoginFragment.newInstance());
-//            LogUtils.e("fragment","loadRootFragment");
-//        }
     }
+
+
+
 
 
 }

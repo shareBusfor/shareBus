@@ -56,4 +56,8 @@ public class MyApplication extends BaseApp {
         }
 
     }
+
+    private void getLocation(){
+
+    }
 }
