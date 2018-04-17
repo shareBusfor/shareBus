@@ -4,6 +4,9 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.content.res.AppCompatResources;
 
+import com.tbruyelle.rxpermissions2.RxPermissions;
+
+//import io.victoralbertos.rx2_permissions_result.RxPermissionsResult;
 import mulin.sharebus.base.BaseApp;
 import mulin.sharebus.util.ProDemoContext;
 import sakout.mehdi.StateViews.StateViewsBuilder;
@@ -15,7 +18,7 @@ import sakout.mehdi.StateViews.StateViewsBuilder;
 public class MyApplication extends BaseApp {
 
     private ProDemoContext mContext = ProDemoContext.getInstance();
-
+    RxPermissions rxPermissions ;
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -25,12 +28,13 @@ public class MyApplication extends BaseApp {
     public void onCreate() {
         super.onCreate();
         mContext.init(getContext());
-
+//        RxPermissionsResult.register(this);
         init();
     }
 
     private void init(){
 
+//        rxPermissions = new RxPermissions(getContext());
         StateViewsBuilder.init(this)
                 .setIconColor(Color.parseColor("#D2D5DA"))
                 .addState("error",
@@ -51,7 +55,7 @@ public class MyApplication extends BaseApp {
     }
     private void checkIsFirstStart(){
         boolean isFirstStart = mContext.getISFIRSTSTART();
-        if (isFirstStart == true){
+        if (isFirstStart){
             mContext.setISFIRSTSTART(false);
         }
 

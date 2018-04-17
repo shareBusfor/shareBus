@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        user_test {
+            keyAlias 'mulin'
+            keyPassword '87993469'
+            storeFile file('C:/Keystore/yuyuljf.jks')
+            storePassword '2.71828'
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "mulin.sharebus"
@@ -14,6 +22,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.user_test
+        }
+        debug {
+            signingConfig signingConfigs.user_test
         }
     }
     packagingOptions {
@@ -26,22 +38,18 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
-
-    implementation('com.mikepenz:crossfadedrawerlayout:1.0.1@aar')
-    implementation('com.mikepenz:materialdrawer:6.0.7@aar'){
+    implementation 'com.mikepenz:crossfadedrawerlayout:1.0.1@aar'
+    implementation('com.mikepenz:materialdrawer:6.0.7@aar') {
         transitive = true
     }
     implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
     implementation 'com.mikepenz:fontawesome-typeface:5.0.6.0@aar'
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     implementation 'me.yokeyword:fragmentation:1.2.4'
-
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
@@ -53,18 +61,13 @@ dependencies {
     implementation 'com.orhanobut:logger:1.15'
     //个人认为现在比较优秀的广告条控件
     implementation 'com.youth.banner:banner:1.4.9'
-
-//    compile 'com.jakewharton:butterknife:7.0.1'
-
+    //    compile 'com.jakewharton:butterknife:7.0.1'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
-
     implementation 'org.greenrobot:eventbus:3.0.0'
     //viewpager指示器 与 导航栏控件
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
-
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
@@ -72,18 +75,15 @@ dependencies {
     implementation 'io.reactivex:rxjava:1.3.0'
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'com.github.medyo:state-views:0.2'
-
     implementation 'com.github.akarnokd:rxjava2-interop:0.8.0'
-
     implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
-
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     implementation 'com.amap.api:search:5.5.0'
     implementation 'com.amap.api:navi-3dmap:6.0.1_3dmap6.1.0'
     implementation 'com.amap.api:location:3.6.1'
-
-//    compile 'io.fabric.tools:gradle:1.+'
-
-//    implementation 'com.jakewharton:butterknife:7.0.1'
+//    折叠listView控件
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.2'
+    //    compile 'io.fabric.tools:gradle:1.+'
+    //    implementation 'com.jakewharton:butterknife:7.0.1'
 }

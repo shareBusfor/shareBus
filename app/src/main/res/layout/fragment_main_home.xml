@@ -46,7 +46,7 @@
                     android:layout_width="50dp"
                     android:layout_height="20dp"
                     android:text="泉州市"
-                    android:textSize="15dp"
+                    android:textSize="10dp"
                     android:textColor="@color/gray"
                     android:gravity="center"/>
                 <ImageView
@@ -76,12 +76,19 @@
 
 
     <FrameLayout
+        android:layout_marginTop="40dp"
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar">
 
-
+        <TextView
+            android:id="@+id/txtLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Test"
+            android:textSize="16sp" />
     </FrameLayout>
 
 
@@ -93,10 +100,10 @@
         >
 
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:text="StateView"/>-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="StateView"/>-->
 
     </sakout.mehdi.StateViews.StateView>
 
