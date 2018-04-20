@@ -46,6 +46,7 @@ dependencies {
     }
     implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
     implementation 'com.mikepenz:fontawesome-typeface:5.0.6.0@aar'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -84,6 +85,8 @@ dependencies {
     implementation 'com.amap.api:location:3.6.1'
 //    折叠listView控件
     implementation 'com.ramotion.foldingcell:folding-cell:1.2.2'
+    //上拉菜单控件
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
     //    compile 'io.fabric.tools:gradle:1.+'
     //    implementation 'com.jakewharton:butterknife:7.0.1'
 }

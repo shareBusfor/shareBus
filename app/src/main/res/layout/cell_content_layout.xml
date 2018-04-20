@@ -9,11 +9,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bgContentTop"
-        android:paddingBottom="7dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:paddingTop="7dp">
+        android:background="@color/black"
+        android:paddingBottom="@dimen/y7"
+        android:paddingLeft="@dimen/y12"
+        android:paddingRight="@dimen/y12"
+        android:paddingTop="@dimen/y7">
 
         <TextView
             android:layout_width="wrap_content"
@@ -23,15 +23,7 @@
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="@string/price_mock"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+
 
         <ImageView
             android:layout_width="wrap_content"
@@ -45,6 +37,7 @@
 
     <!-- content header image -->
     <RelativeLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
